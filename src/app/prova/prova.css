@@ -14,4 +14,38 @@
 .example-full-width {
   width: 100%;
 }
+.rigaPersona {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.cerchioVerde {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: green;
+  text-align: center;
+  color: white;
+}
+.cerchioRosso {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-left: 10px;
+  background-color: red;
+  text-align: center;
+  color: white;
+}
+.cerchio {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.cerchioOnLine{
+  background-color: green;
+}
+.cerchioOffLine{
+  background-color: red;
+}
 

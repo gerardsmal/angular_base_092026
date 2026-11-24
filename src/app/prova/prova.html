@@ -1,3 +1,11 @@
+
+<h1 appHighLight [appHighLight] = 'colore' [defaultColor] = 'defaultColore'>{{title}}</h1>  
+<p>Ciao benevenuto al {{title | uppercase}}</p>
+<p>{{oggi | date: 'd/MM/yyyy - h:mm'}}</p>
+<p>{{numero | number: '3.2-2'}}</p>
+<p>{{numero | currency : 'EUR'}}</p>
+
+<!--
 <mat-card class="example-card" appearance="outlined">
   <mat-card-header>
     <div mat-card-avatar class="example-header-image"></div>
@@ -17,8 +25,59 @@
   </mat-card-actions>
 </mat-card>
    <mat-form-field class="example-full-width">
-        <mat-label>Input</mat-label>
-        <input matInput placeholder="Placeholder" (input)="onInput($event)">
+        <mat-label>Titolo</mat-label>
+        <input matInput placeholder="Titolo" [(ngModel)]="title"  >
     </mat-form-field>
 
+<div *ngIf="daVedere">
+      <p>Sono visibile vecchio stilo</p>
+</div>
+  @if (daVedere) {
+    <div>
+      <p>Sono visibile</p>
+    </div>
+  } @else {
+    <div>
+      <p>Non sono visibile</p>
+    </div>
+  }
+  --> 
+  <div>
+    @for (persona of persone; track  persona ;let i = $index; let isLast = $last; let isFirst = $first;) {
+      <div class="rigaPersona" [ngStyle]="{color: persona.colore}">
+          <span>
+              {{isFirst}}/{{isLast}}  {{ persona.nome }} {{ persona.cognome }}
+          </span>
+          <div class="cerchio"
+                [ngClass]="{cerchioOnLine: persona.isOnline,
+                            cerchioOffLine : !persona.isOnline
+                }">
+          </div>
+      </div>
+    }
+    <button mat.raised-button color="primary" (click)="invioDati()">Invio dati</button>
+  </div> 
+  <div>
+  <input #inputSaluti value="ciao">
+  <button mat.raised-button color="primary" (click)="seeValue()">see inputSaluti</button>
+  </div>
+  <!--
+  @switch (numero){
+    @case (1){
+      <p>Uno</p>
+    }
+    @case (2){
+      <p>Due</p>
+    }
+    @case (3){
+      <p>Tre</p>
+    }
+    @case (4){
+      <p>quatro</p>
+    }
+    @default {
+      <p>Default</p>
+    }
  
+  } 
+    -->
