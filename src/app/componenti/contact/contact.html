@@ -1,1 +1,10 @@
-<p>contact works!</p>
+<div>
+    @for (persona of persone; track  persona ;let i = $index; ) {
+      <div class="rigaPersona" [ngStyle]="{color: persona.colore}">
+          <a routerLink="/contact/{{i}}">{{ persona.nome }} {{ persona.cognome }}</a>
+      </div>
+    }
+  </div>
+  <div>
+    <router-outlet></router-outlet>
+  </div> 

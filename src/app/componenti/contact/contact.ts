@@ -1,18 +1,24 @@
 import { Component, OnInit } from '@angular/core';
 import { ProvaServices } from '../../services/prova-services';
+import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
+
 
 @Component({
-  imports: [],
+  imports: [CommonModule, RouterLink, RouterOutlet],
   selector: 'app-contact',
   styleUrl: './contact.css',
   templateUrl: './contact.html',
 })
 export class Contact  implements OnInit{
   
-  constructor(private serviceProva:ProvaServices){}
+  persone:any;
+  constructor(private serviceProva:ProvaServices,
+  ){}
   
   ngOnInit(): void {
-    
+      this.persone = this.serviceProva.getPersone();
   }
 
 }
