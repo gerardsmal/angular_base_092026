@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProvaServices } from '../../services/prova-services';
-import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
 
 
