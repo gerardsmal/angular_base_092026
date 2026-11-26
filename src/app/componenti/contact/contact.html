@@ -1,8 +1,9 @@
 <div style="display: flex; gap:30px; align-items: flex-start;">
     <div style="min-width: 250px;">
     @for (persona of persone(); track  persona.id ) {
-      <div class="rigaPersona" [ngStyle]="{color: persona.colore}">
-          <a routerLink="/contact/{{persona.id}}">{{ persona.nome }} {{ persona.cognome }}</a>
+      <div class="rigaPersona" >
+          <a routerLink="/contact/{{persona.id}}" 
+              [ngStyle]="{color: persona.colore}">{{ persona.nome }} {{ persona.cognome }}</a>
       </div>
     }
     </div>

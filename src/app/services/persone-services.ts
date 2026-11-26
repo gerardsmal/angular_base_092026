@@ -35,4 +35,8 @@ export class PersoneServices {
             .pipe(tap(() => this.list()))
     }
 
+    delete(id:number){
+        return this.http.delete(this.url + "delete/" + id)
+            .pipe(tap(() => this.list()))
+    }
 }
