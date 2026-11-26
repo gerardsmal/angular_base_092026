@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProvaServices } from '../../services/prova-services';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { PersoneServices } from '../../services/persone-services';
 
 
 
@@ -13,12 +14,14 @@ import { CommonModule } from '@angular/common';
 })
 export class Contact  implements OnInit{
   
-  persone:any;
-  constructor(private serviceProva:ProvaServices,
-  ){}
+  persone:any;  
+  constructor(private service:PersoneServices,
+  ){
+    this.persone = this.service.persone;
+  }
   
   ngOnInit(): void {
-      this.persone = this.serviceProva.getPersone();
+      this.service.list();
   }
 
 }

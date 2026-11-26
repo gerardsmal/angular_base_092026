@@ -1,53 +1,18 @@
-.example-card {
-  max-width: 400px;
-}
-.example-header-image {
-  background-image: url('https://material.angular.dev/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
-}
-
-.example-full-width {
-  width: 100%;
-}
-.rigaPersona {
+.form-container{
   display: flex;
-  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-col{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 80%;
   gap: 10px;
 }
-.cerchioVerde {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-left: 10px;
-  background-color: green;
-  text-align: center;
-  color: white;
+.button-group{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
-.cerchioRosso {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  margin-left: 10px;
-  background-color: red;
-  text-align: center;
-  color: white;
-}
-.cerchio {
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-}
-.cerchioOnLine{
-  background-color: green;
-}
-.cerchioOffLine{
-  background-color: red;
-}
-
-
-
