@@ -1,5 +1,6 @@
-import { Component, OnInit, signal } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { Router, RouterLink, RouterOutlet } from '@angular/router';
+import { AuthService } from './auth/auth-service';
 
 @Component({
   imports: [RouterOutlet, RouterLink],
@@ -10,6 +11,8 @@ import { RouterLink, RouterOutlet } from '@angular/router';
 export class App implements OnInit{
   
   protected readonly title = signal('corso_angular');
+  readonly auth:AuthService = inject(AuthService);
+  readonly routing:Router = inject(Router);
 
    persone = [{}]; 
    persone1 = [
@@ -39,5 +42,10 @@ export class App implements OnInit{
   }
   retrieveMessaggio(value: string){
     console.log("messaggio ricevuto:" + value);
+  }
+
+  logout(){
+    this.auth.resetAll();
+    this.routing.navigate(['home']);
   }
 }

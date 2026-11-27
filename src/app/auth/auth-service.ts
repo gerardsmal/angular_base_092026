@@ -2,14 +2,29 @@ import { Service } from '@angular/core';
 
 @Service()
 export class AuthService {
-    private isLogged = true;
-    private isAdmin  = true;
 
-    isAutentificated(){
-        return this.isLogged;
+    setAutentificated(): void {
+        localStorage.setItem("isLogged", "1");
     }
 
-    isRoleAdmin(){
-        return this.isAdmin;
+    setAdmin(): void {
+        localStorage.setItem("isAdmin", "1");
+    }
+
+    setUser(): void {
+        localStorage.setItem("isAdmin", "0");
+    }
+
+    resetAll(): void {
+        localStorage.removeItem("isLogged");
+        localStorage.removeItem("isAdmin");
+    }
+
+    isAutentificated(): boolean {
+        return localStorage.getItem("isLogged") === "1";
+    }
+
+    isRoleAdmin(): boolean {
+        return localStorage.getItem("isAdmin") === "1";
     }
 }

@@ -1,0 +1,27 @@
+<div class="container">
+       <h1>Login</h1>
+       <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+            <mat-form-field>
+                <mat-label>UserName</mat-label>
+                <input matInput type="text" name="userName" placeholder="vostro username" ngModel required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Password</mat-label>
+                <input matInput type="password" name="password" placeholder="vostro password" ngModel required>
+            </mat-form-field>
+
+            <mat-form-field>
+                <mat-label>Email</mat-label>
+                <input matInput type="text" name="email" placeholder="vostra mail" ngModel required>
+            </mat-form-field>
+
+            <p style="color: red;">{{msg()}}</p>
+
+            <div class="button-group">
+                <button mat-raised-button color="primary" type="submit" 
+                                [disabled]="!registerForm.valid">Create</button>
+            </div>
+       </form> 
+
+</div>

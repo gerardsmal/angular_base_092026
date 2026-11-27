@@ -4,7 +4,11 @@
 <button mat.raised-button color="primary" (click)="onRestore()">Restore persone</button>
 <app-prova-persone-service></app-prova-persone-service>
 -->
-<a routerLink="/home" style="margin-left: 10px;">Home</a> 
-<a routerLink="/about" style="margin-left: 10px;">About</a> 
-<a routerLink="/contact" style="margin-left: 10px;">Contact</a> 
+<nav class="navbar">
+    <a routerLink="/home">Home</a>
+    <a routerLink="/about">About</a>
+    <a routerLink="/contact">Contact</a>
+
+    <button (click)="logout()">LOGOUT</button>
+</nav>
 <router-outlet/>
